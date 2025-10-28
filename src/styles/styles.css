@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@plugin "@tailwindcss/forms";
+@plugin "tailwindcss-animated";
+@plugin './plugins/grid-auto-fill.js';
+@plugin './plugins/grid-auto-fit.js';
+
+@import "./theme/colors.css";
+@import "./theme/breakpoints.css";
+
+html {
+  font-size: 62.5%;
+}

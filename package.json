@@ -5,21 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:grapette": "node dist/grapette/server/server.mjs"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
+    "serve:ssr:grapette": "node dist/grapette/server/server.mjs",
+    "svg": "svgo -f ./src/assets/icons --config ./svgo.config.js"
   },
   "private": true,
   "dependencies": {
@@ -31,8 +18,13 @@
     "@angular/platform-server": "^20.3.0",
     "@angular/router": "^20.3.0",
     "@angular/ssr": "^20.3.1",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/postcss": "^4.1.16",
+    "angular-svg-icon": "^19.1.1",
     "express": "^5.1.0",
+    "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
+    "tailwindcss": "^4.1.16",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
@@ -41,6 +33,8 @@
     "@angular/compiler-cli": "^20.3.0",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
+    "svgo": "^4.0.0",
+    "tailwindcss-animated": "^2.0.0",
     "typescript": "~5.9.2"
   }
 }
