@@ -1,10 +1,7 @@
-<div
-  class="relative grid h-(--vh) w-screen grid-rows-[auto,1fr] overflow-x-hidden"
->
-  <app-header></app-header>
+<div class="relative grid h-(--vh) w-screen overflow-x-hidden">
+  <app-header class="absolute top-0 left-0 w-full z-50"></app-header>
   <div class="relative h-full overflow-y-auto">
     <router-outlet class="absolute"></router-outlet>
-    <div>asdfasdf</div>
     <app-footer></app-footer>
   </div>
 </div>

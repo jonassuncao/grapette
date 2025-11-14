@@ -1,9 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import SHARED_MODULES from '@app/shared';
+import { BannerComponent } from "../../shared/components/banner/banner.component";
+import { CeremonyComponent } from "../../shared/components/ceremony/ceremony.component";
+import { HistoryComponent } from "../../shared/components/history/history.component";
+import { GiftComponent } from "../../shared/components/gift/gift.component";
+import { GameComponent } from "../../shared/components/game/game.component";
 
 @Component({
   standalone: true,
-  imports: [SHARED_MODULES],
+  imports: [SHARED_MODULES, BannerComponent, CeremonyComponent, HistoryComponent, GiftComponent, GameComponent],
   templateUrl: './main-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
