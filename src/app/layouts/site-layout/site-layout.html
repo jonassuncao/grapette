@@ -1,7 +1,10 @@
 <div
   class="relative grid h-(--vh) w-screen grid-rows-[auto,1fr] overflow-x-hidden"
 >
-  <p>header-component</p>
-  <router-outlet class="absolute"></router-outlet>
-  <p>footer-component</p>
+  <app-header></app-header>
+  <div class="relative h-full overflow-y-auto">
+    <router-outlet class="absolute"></router-outlet>
+    <div>asdfasdf</div>
+    <app-footer></app-footer>
+  </div>
 </div>

@@ -7,21 +7,22 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
           "inlineStyle": true,
+          "style": "none",
+          "skipImport": true,
           "skipTests": true,
-          "standalone": true
+          "changeDetection": "OnPush"
         },
         "@schematics/angular:class": {
           "skipTests": true
         },
         "@schematics/angular:directive": {
           "skipTests": true,
-          "standalone": true
+          "skipImport": true
         },
         "@schematics/angular:pipe": {
           "skipTests": true,
-          "standalone": true
+          "skipImport": true
         },
         "@schematics/angular:service": {
           "skipTests": true
@@ -37,12 +38,7 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "css",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles/styles.css"],
             "server": "src/main.server.ts",
             "outputMode": "server",
