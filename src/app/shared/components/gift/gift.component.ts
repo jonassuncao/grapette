@@ -1,17 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import SHARED_MODULES from '@app/shared';
 
 @Component({
   selector: 'app-gift',
   templateUrl: './gift.component.html',
-  styles: [
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  imports: [SHARED_MODULES],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class GiftComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class GiftComponent {}

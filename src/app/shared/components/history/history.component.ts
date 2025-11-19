@@ -1,17 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import SHARED_MODULES from '@app/shared';
+import { GameComponent } from "../game/game.component";
 
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
-  styles: [
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  imports: [SHARED_MODULES, GameComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HistoryComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class HistoryComponent {}

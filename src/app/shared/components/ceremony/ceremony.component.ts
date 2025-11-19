@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import SHARED_MODULES from '@app/shared';
 
 @Component({
@@ -7,8 +7,5 @@ import SHARED_MODULES from '@app/shared';
   imports: [SHARED_MODULES],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CeremonyComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class CeremonyComponent  {
 }
