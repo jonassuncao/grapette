@@ -20,7 +20,7 @@ import { CounterComponent } from '../counter/counter.component';
 })
 export class BannerComponent implements AfterViewInit {
   private readonly renderer = inject(Renderer2);
-  private readonly platformId = inject(PLATFORM_ID);
+
   private readonly scrollService = inject(ScrollService);
   @ViewChild('banner') private readonly banner: ElementRef<HTMLElement>;
 
