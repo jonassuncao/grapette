@@ -14,12 +14,13 @@ import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { routes } from '../app.routes';
 import { provideCore } from './app.core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-
+    importProvidersFrom(BrowserAnimationsModule),
     provideRouter(
       routes,
       withInMemoryScrolling({
