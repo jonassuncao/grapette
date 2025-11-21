@@ -1,6 +1,6 @@
 <div class="relative grid h-(--vh) w-screen overflow-x-hidden">
   <app-header class="absolute top-0 left-0 w-full z-50"></app-header>
-  <div class="relative h-full overflow-y-auto">
+  <div #scroll class="relative h-full overflow-y-auto">
     <router-outlet class="absolute"></router-outlet>
     <app-footer></app-footer>
   </div>

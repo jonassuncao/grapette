@@ -1,18 +1,36 @@
-<div class="relative w-full h-full bg-black/80 overflow-hidden">
-  <img class="w-full opacity-50" src="assets/images/banner.webp" />
+<div class="relative w-full bg-black/80 overflow-hidden">
+  <div class="relative overflow-hidden h-screen">
+    <img
+      #banner
+      class="w-full object-cover object-center h-screen absolute top-0 left-0 opacity-50"
+      src="assets/images/banner.webp"
+    />
+  </div>
 
   <div
-    class="absolute flex items-center justify-center h-full w-full top-0 left-0"
+    class="absolute animate-fade-right animate-once animate-ease-in-out text-white flex items-center justify-start h-full w-full top-10 left-80"
   >
-    <div class="w-fit text-white flex items-center flex-col gap-10">
+    <div>
+      <p class="text-[5rem] font-libre-baskerville italic">Vão se casar</p>
+      <p
+        class="text-[15rem] text-justify leading-none not-italic font-semibold font-raleway"
+      >
+        Sarah &
+      </p>
+      <p
+        class="text-[15rem] leading-none font-semibold not-italic font-raleway"
+      >
+        Jônathas
+      </p>
+    </div>
+  </div>
+  <div
+    class="absolute text-white flex items-end justify-center h-full w-full bottom-30 left-0"
+  >
+    <div class="w-fit flex items-center flex-col gap-40">
       <app-counter></app-counter>
-      <div>
-        <p class="text-[5rem]">Vão se casar</p>
-        <p class="text-[15rem] leading-none">Sarah &</p>
-        <p class="text-[15rem] leading-none">Jônathas</p>
-      </div>
       <div
-        class="bg-white w-fit px-20 rounded-full text-2xl items-center justify-around gap-20 text-black py-5 flex"
+        class="bg-white w-fit px-32 animate-fade-up animate-once animate-ease-in-out rounded-full text-[1.7rem] items-center justify-around gap-20 text-black py-5 flex"
       >
         <div class="text-center">
           <p>Domingo</p>

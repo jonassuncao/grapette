@@ -5,9 +5,34 @@
 @plugin './plugins/grid-auto-fill.js';
 @plugin './plugins/grid-auto-fit.js';
 
+@import "./fonts/libre_baskerville.css";
+@import "./fonts/raleway.css";
+
 @import "./theme/colors.css";
 @import "./theme/breakpoints.css";
 
-html {
-  font-size: 62.5%;
+@layer components {
+  .tick-credits {
+    @apply hidden;
+  }
+
+  .tick-flip-panel {
+    @apply bg-base-500! text-black!;
+  }
+  .tick,
+  .tick * {
+    @apply not-italic font-raleway;
+  }
+}
+
+@layer base {
+  html {
+    font-size: 62.5%;
+  }
+
+  *,
+  html,
+  body {
+    @apply font-libre-baskerville italic;
+  }
 }
