@@ -1,24 +1,25 @@
+import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import {
   ApplicationConfig,
   importProvidersFrom,
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
-import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
-import { routes } from '../app.routes';
-import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { routes } from '../app.routes';
 import { provideCore } from './app.core';
-import { provideHttpClient, withFetch } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
+
     provideRouter(
       routes,
       withInMemoryScrolling({

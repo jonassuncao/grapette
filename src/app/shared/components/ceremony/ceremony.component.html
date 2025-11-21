@@ -6,19 +6,25 @@
       class="bg-base-500 flex items-start pt-20 pb-40 justify-between w-full"
     >
       <div class="w-150">
-        <p>O Casamento</p>
-        <p>Domingo, 19 de Abr, 2026</p>
+        <p class="not-italic font-semibold text-[4rem] font-raleway">
+          A Cerimônia
+        </p>
+        <p class="text-[1.5rem]">Domingo,</p>
+        <p class="text-[1.5rem]">19 de Abr de 2026 - 10h30</p>
       </div>
-      <svg-icon
-        class="text-black flex w-52 px-2 animate-delay-500 animate-fade-down"
-        src="assets/icons/logo.svg"
-      ></svg-icon>
+
+      <app-logo></app-logo>
       <div class="w-150">
-        <p>Convidamos você para a celebração do nosso casamento.</p>
-        <p>O autor da vida</p>
-        <p>conta histórias belas</p>
-        <p>Já escreveu a nossa,</p>
-        <p>com final feliz.</p>
+        <p class="not-italic pb-10 font-semibold text-[2rem] font-raleway">
+          Convidamos <span class="animate-pulse">você</span> para a celebração
+          do nosso casamento.
+        </p>
+        <p class="text-[2rem] leading-12">O autor da vida</p>
+        <p class="text-[2rem] leading-12">conta histórias belas</p>
+        <p class="text-[2rem] leading-12">
+          Já escreveu a <span class="text-base-700">nossa</span>,
+        </p>
+        <p class="text-[2rem] leading-12">com final feliz.</p>
       </div>
     </div>
   </div>
@@ -26,13 +32,39 @@
     <div
       class="flex items-center gap-20 relative -top-40 flex-col max-w-720 mx-auto justify-center px-4 py-8 w-full text-xl lg:text-2xl"
     >
-      <img class="h-208 w-fit" src="assets/images/banner.webp" />
+      <iframe
+        class="h-250 w-500 shadow"
+        loading="lazy"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.088663134101!2d-47.87309612202379!3d-23.34880215382267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5d8e320aa1853%3A0x1a18e1838705776d!2sIgreja%20Adventista%20do%20S%C3%A9timo%20Dia%20Jd%20Wanderley!5e0!3m2!1spt-BR!2sbr!4v1763743464469!5m2!1spt-BR!2sbr"
+        allowfullscreen=""
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
 
-      <div>
+      <div class="text-center">
         <h1 class="py-2 font-semibold text-[5rem]">Cerimônia</h1>
-        <p class="text-2xl">Domingo, 19 Abr, 10:30, IASD Jd. Wanderley</p>
-        <p class="text-2xl">R. Profa. Maria de Lourdes A Sinisgali, 274</p>
-        <p class="text-2xl">Jardim Wanderley, Tatuí - SP, 18270-000</p>
+        <p class="text-3xl leading-12 font-raleway not-italic">
+          Domingo, 19 Abr, 10:30, IASD Jd. Wanderley
+        </p>
+        <p class="text-3xl leading-12 font-raleway not-italic">
+          R. Profa. Maria de Lourdes A Sinisgali, 274
+        </p>
+        <p class="text-3xl leading-12 font-raleway not-italic">
+          Jardim Wanderley, Tatuí - SP, 18270-000
+        </p>
+
+        <div class="flex pt-20 justify-center">
+          <a
+            class="flex gap-5 border font-medium text-3xl leading-12 not-italic hover:underline font-raleway rounded-full px-10 py-5"
+            href="https://maps.app.goo.gl/ULMfYE1ogsf1fU9M9"
+            target="_blank"
+          >
+            <svg-icon
+              class="block h-12 w-12"
+              src="assets/icons/pin.svg"
+            ></svg-icon>
+            Ir para o mapa
+          </a>
+        </div>
       </div>
     </div>
   </div>
