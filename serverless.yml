@@ -1,0 +1,21 @@
+service: grapette-site
+
+provider:
+  name: aws
+  runtime: nodejs24.x
+  memorySize: 512
+  timeout: 10
+  region: sa-east-1
+package:
+  include:
+    - dist/**
+    - node_modules/@codegenie/serverless-express/**
+    - lambda.js
+  exclude:
+    - "**"
+functions:
+  api:
+    handler: lambda.handler
+    events:
+      - http: ANY /{proxy+}
+      - http: ANY /
