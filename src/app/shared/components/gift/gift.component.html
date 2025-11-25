@@ -1,10 +1,47 @@
 <div
-  class="relative w-full text-black flex bg-white items-center justify-center flex-col"
+  class="relative pt-150 w-full text-black flex bg-white items-center justify-center flex-col"
 >
   <h1 class="py-2 font-semibold text-[5rem]">Lista de Presentes</h1>
 
   <h1>titulo</h1>
-  <div>Carrosel</div>
+  <owl-carousel-o class="w-full" [options]="options">
+    @for (item of list1(); track $index) {
+    <ng-template carouselSlide>
+      <div class="p-10">
+        <div
+          class="bg-base-300 shadow-lg group shadow-black/20 p-8 rounded-2xl text-center flex flex-col gap-10"
+        >
+          <div class="relative rounded-xl overflow-hidden bg-white h-120">
+            <app-logo
+              class="flex absolute rounded-xl p-5 w-full h-full left-0 top-0 justify-center"
+            ></app-logo>
+            <img
+              loading="lazy"
+              class="relative transition-all duration-300 group-hover:scale-150 rounded-xl z-30 w-full shadow h-full object-cover"
+              [src]="item.img"
+            />
+          </div>
+          <p class="text-3xl h-30 not-italic font-raleway">
+            {{ item.item }}
+          </p>
+          <p class="text-4xl not-italic font-raleway">
+            R$
+            <span class="not-italic font-raleway font-semibold text-5xl">{{
+              item.price.decimal
+            }}</span
+            >,{{ item.price.cents }}
+          </p>
+          <button
+            class="flex cursor-pointer gap-5 border justify-center font-medium text-2xl leading-12 not-italic hover:underline font-raleway rounded-full px-10 py-5"
+            type="button"
+          >
+            Presentear
+          </button>
+        </div>
+      </div>
+    </ng-template>
+    }
+  </owl-carousel-o>
   <h1>titulo</h1>
   <div>Carrosel</div>
   <h1>titulo</h1>

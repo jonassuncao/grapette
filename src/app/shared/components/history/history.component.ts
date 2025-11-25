@@ -11,13 +11,12 @@ import {
   SlidesOutputData,
 } from 'ngx-owl-carousel-o';
 import { Observable } from 'rxjs';
-import { GameComponent } from '../game/game.component';
 import { Logo } from '../logo/logo';
 
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
-  imports: [SHARED_MODULES, GameComponent, CarouselModule, Logo],
+  imports: [SHARED_MODULES, CarouselModule, Logo],
   host: { ngSkipHydration: 'true' },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

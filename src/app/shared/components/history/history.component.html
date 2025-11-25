@@ -1,44 +1,38 @@
-<div class="relative w-full text-black flex bg-white">
-  <div class="w-1/2 flex flex-col">
-    <div class="w-full justify-center flex flex-col items-center">
-      <div class="max-w-250 flex gap-10 flex-col">
-        <h1 class="py-2 font-semibold text-[5rem]">Nossa história</h1>
-        <p class="font-raleway leading-12 not-italic text-3xl">
-          Conta-se que, em 2021, um certo rapaz de Goiânia resolveu trocar de
-          cidade. <br />
-          Jônathas, assim se chamava o rapaz, de aparência tranquila, trazia nos
-          olhos — ampliados pelos óculos — um ar estudioso, quase metódico,
-          desses que pesam as palavras antes de oferecê-las. <br />
-          Sarah, moça já habitante de Tatuí, com sorriso claro e expressão
-          aberta, e que parecia compreender o mundo de forma mais sensível,
-          percebendo antes de pensar, observou — sem saber — a aproximação do
-          enredo.
-        </p>
-        <p class="font-raleway leading-12 not-italic text-3xl">
-          Os primeiros capítulos não foram escritos em parques ou viagens, mas
-          entre gôndolas de mercado e filas de banco, onde a vida comum se ocupa
-          em preparar o extraordinário.
-        </p>
-        <p class="font-raleway leading-12 not-italic text-3xl">
-          Sentaram-se lado a lado, como quem divide o mesmo destino e o mesmo
-          banco de automóvel. <br />
-          Seguiu-se um beijo naquele carro vermelho antigo, prova documental de
-          que a simplicidade tem seus méritos. <br />
-          Em pouco tempo, à mesa de pizza, firmou-se o contrato sentimental.
-        </p>
-        <p class="font-raleway leading-12 not-italic text-3xl">
-          Desde então, a narrativa prossegue: com livros, viagens breves,
-          projetos longos e aquele tipo de convivência que, em vez de
-          espetáculo, prefere constância.
-        </p>
-        <p class="font-raleway leading-12 not-italic text-3xl">
-          E assim chegamos a esta página — <br />com o objetivo singelo de
-          registrar que a história deles continua.
-        </p>
-      </div>
-    </div>
-    <div class="flex items-center justify-center w-full">
-      <app-game></app-game>
+<div class="relative pt-100 w-full text-black flex bg-white gap-10">
+  <div class="w-1/2 flex flex-col items-center justify-center">
+    <div class="max-w-250 flex gap-10 flex-col">
+      <h1 class="py-2 font-semibold text-[5rem]">Nossa história</h1>
+      <p class="font-raleway leading-12 not-italic text-3xl">
+        Conta-se que, em 2021, um certo rapaz de Goiânia resolveu trocar de
+        cidade. <br />
+        Jônathas, assim se chamava o rapaz, de aparência tranquila, trazia nos
+        olhos — ampliados pelos óculos — um ar estudioso, quase metódico, desses
+        que pesam as palavras antes de oferecê-las. <br />
+        Sarah, moça já habitante de Tatuí, com sorriso claro e expressão aberta,
+        e que parecia compreender o mundo de forma mais sensível, percebendo
+        antes de pensar, observou — sem saber — a aproximação do enredo.
+      </p>
+      <p class="font-raleway leading-12 not-italic text-3xl">
+        Os primeiros capítulos não foram escritos em parques ou viagens, mas
+        entre gôndolas de mercado e filas de banco, onde a vida comum se ocupa
+        em preparar o extraordinário.
+      </p>
+      <p class="font-raleway leading-12 not-italic text-3xl">
+        Sentaram-se lado a lado, como quem divide o mesmo destino e o mesmo
+        banco de automóvel. <br />
+        Seguiu-se um beijo naquele carro vermelho antigo, prova documental de
+        que a simplicidade tem seus méritos. <br />
+        Em pouco tempo, à mesa de pizza, firmou-se o contrato sentimental.
+      </p>
+      <p class="font-raleway leading-12 not-italic text-3xl">
+        Desde então, a narrativa prossegue: com livros, viagens breves, projetos
+        longos e aquele tipo de convivência que, em vez de espetáculo, prefere
+        constância.
+      </p>
+      <p class="font-raleway leading-12 not-italic text-3xl">
+        E assim chegamos a esta página — <br />com o objetivo singelo de
+        registrar que a história deles continua.
+      </p>
     </div>
   </div>
 
@@ -47,7 +41,7 @@
       class="flex h-full bg-center bg-repeat gap-40 justify-between pb-20 pt-60 flex-col items-center w-full"
       [style.background-image]="'url(assets/images/flowers.webp)'"
     >
-      <div class="h-450 relative rounded-md shadow-lg min-w-150 bg-white">
+      <div class="h-350 relative rounded-md shadow-lg min-w-150 bg-white">
         <img
           (load)="loading.set(false)"
           class="h-full relative rounded-md w-fit"

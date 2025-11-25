@@ -4,6 +4,7 @@ import { BannerComponent } from '../../shared/components/banner/banner.component
 import { CeremonyComponent } from '../../shared/components/ceremony/ceremony.component';
 import { GiftComponent } from '../../shared/components/gift/gift.component';
 import { HistoryComponent } from '../../shared/components/history/history.component';
+import { GameComponent } from "../../shared/components/game/game.component";
 
 @Component({
   standalone: true,
@@ -13,7 +14,8 @@ import { HistoryComponent } from '../../shared/components/history/history.compon
     CeremonyComponent,
     HistoryComponent,
     GiftComponent,
-  ],
+    GameComponent
+],
   templateUrl: './main-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
