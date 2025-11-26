@@ -102,6 +102,8 @@ export class GiftComponent {
     nav: false,
     items: 10,
     lazyLoad: true,
-    autoplay: false,
+    autoplay: true,
+    autoplayTimeout: 3700,
+    autoplayHoverPause: true,
   };
 }
