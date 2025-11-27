@@ -1,34 +1,43 @@
-<div class="w-full shadow text-black bg-white">
+<div
+  class="w-full scrolled:shadow transition-all bg-black/30 duration-300 scrolled:bg-base-500"
+  [ngClass]="{'scrolled': scrolled()}"
+>
   <div
-    class="flex items-center max-w-720 mx-auto justify-between px-4 py-8 w-full text-xl lg:text-2xl uppercase font-light md:h-80 h-40 xl:px-10"
+    class="flex items-center max-w-400 5xl:max-w-720 mx-auto justify-between md:px-4 py-8 w-full text-xl lg:text-2xl uppercase h-40 xl:px-10"
   >
-    <div class="flex cursor-pointer w-fit">
+    <div class="hidden md:flex cursor-pointer w-fit">
       <svg-icon
-        class="flex w-32 h-28 px-2 animate-delay-500 animate-fade-down"
+        class="flex w-32 h-28 px-2 animate-delay-500 group-scrolled:text-black text-white animate-fade-down"
         src="assets/icons/logo.svg"
       ></svg-icon>
     </div>
 
     <div
-      class="items-center text-[2rem] font-libre-baskerville italic justify-center w-full gap-10 flex"
+      class="items-center tracking-[0.25rem] lg:text-[2rem] group-scrolled:text-black text-white md:text-[1.7rem] text-[1.5rem] font-libre-baskerville italic xl:justify-center xl:gap-40 w-full justify-around flex"
     >
       <button
         type="button"
-        class="px-5 py-2 transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
+        class="px-2 md:px-5 py-2 uppercase not-italic font-raleway transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
       >
         Cerimônia
       </button>
       <button
         type="button"
-        class="px-5 py-2 transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
+        class="px-2 md:px-5 py-2 uppercase not-italic font-raleway transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
       >
-        Nossa história
+        <span class="not-italic font-raleway md:hidden">História</span>
+        <span class="not-italic font-raleway hidden md:block">
+          A História Deles
+        </span>
       </button>
       <button
         type="button"
-        class="px-5 py-2 transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
+        class="px-2 md:px-5 py-2 uppercase not-italic font-raleway transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
       >
-        Presentes
+        <span class="not-italic font-raleway md:hidden">Presentes</span>
+        <span class="not-italic font-raleway hidden md:block">
+          Lista de Presentes
+        </span>
       </button>
     </div>
   </div>

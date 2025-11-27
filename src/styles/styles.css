@@ -11,6 +11,9 @@
 @import "./theme/colors.css";
 @import "./theme/breakpoints.css";
 
+@custom-variant scrolled (&.scrolled);
+@custom-variant group-scrolled (.scrolled &);
+
 @layer components {
   .tick-credits {
     @apply hidden;

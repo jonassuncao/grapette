@@ -1,13 +1,11 @@
-import { isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   ElementRef,
   inject,
-  PLATFORM_ID,
   Renderer2,
-  ViewChild,
+  ViewChild
 } from '@angular/core';
 import { ScrollService } from '@service/scroll.service';
 import { CounterComponent } from '../counter/counter.component';
