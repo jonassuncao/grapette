@@ -13,3 +13,5 @@ https://www.canva.com/design/DAG4qXgaR2o/LmX3SRlb_6beTZGlGRhRAg/edit
 
 https://github1s.com/brunofilho1/javascript-dinosaur-game/blob/HEAD/app.js#L1-L68
 https://github.com/MarcosAllysson/dinosaur-game-javascript-html-css
+
+https://www.canva.com/design/DAG5vSbcDTo/irPFWuTzxozic9_ZozawTQ/edit

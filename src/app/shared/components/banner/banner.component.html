@@ -1,47 +1,45 @@
 <div class="relative w-full bg-black overflow-hidden">
-  <div class="relative overflow-hidden h-screen">
+  <div
+    class="relative overflow-hidden h-[calc(100vh-10rem)] md:h-[calc(100vh-15rem)]"
+  >
     <img
       #banner
-      class="w-full object-cover object-center h-screen absolute top-0 left-0 opacity-90"
+      class="w-full object-cover object-[50%_80%] pb-40 md:pb-60 h-screen absolute top-0 left-0 opacity-90"
       src="assets/images/banner.webp"
     />
   </div>
 
   <div
-    class="absolute animate-fade-right animate-once animate-ease-in-out text-white flex items-center justify-start h-full w-full top-10 left-80"
+    class="absolute animate-fade-right animate-once animate-ease-in-out text-white flex items-center md:justify-start justify-center h-full w-full top-40 lg:top-20 left-0"
   >
-    <div>
-      <p class="text-[5rem] font-libre-baskerville italic">Vão se casar</p>
+    <div class="md:pl-10 xl:pl-20">
       <p
-        class="text-[15rem] text-justify leading-none not-italic font-semibold font-raleway"
+        class="8xl:text-[5rem] xl:text-[4rem] md:text-[3rem] text-[2rem] font-libre-baskerville italic"
+      >
+        Vão se casar
+      </p>
+      <p
+        class="md:hidden not-italic tracking-[0.25rem] font-raleway uppercase text-[3rem]"
+      >
+        Sarah & Jônathas
+      </p>
+      <p
+        class="hidden md:flex text-[7rem] xl:text-[12rem] 8xl:text-[20rem] text-justify leading-none not-italic font-raleway"
       >
         Sarah &
       </p>
       <p
-        class="text-[15rem] leading-none font-semibold not-italic font-raleway"
+        class="hidden md:flex text-[7rem] xl:text-[12rem] 8xl:text-[20rem] leading-none not-italic font-raleway"
       >
         Jônathas
       </p>
     </div>
   </div>
   <div
-    class="absolute text-white flex items-end justify-center h-full w-full bottom-30 left-0"
+    class="absolute text-white flex items-end justify-center h-full w-full bottom-15 left-0"
   >
-    <div class="w-fit flex items-center flex-col gap-40">
+    <div class="w-fit flex items-center flex-col">
       <app-counter></app-counter>
-      <div
-        class="bg-white w-fit px-32 animate-fade-up animate-once animate-ease-in-out rounded-full text-[1.7rem] items-center justify-around gap-20 text-black py-7 flex"
-      >
-        <div class="text-center">
-          <p>Domingo</p>
-          <p>19 Abr, 2026</p>
-        </div>
-        <div class="border-l h-20"></div>
-        <div class="text-center">
-          <p>IASD Jd. Wanderley</p>
-          <p>Tatuí - SP</p>
-        </div>
-      </div>
     </div>
   </div>
 </div>
