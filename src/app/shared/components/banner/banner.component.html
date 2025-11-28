@@ -1,10 +1,10 @@
 <div class="relative w-full bg-black overflow-hidden">
   <div
-    class="relative overflow-hidden h-[calc(100vh-10rem)] md:h-[calc(100vh-15rem)]"
+    class="relative overflow-hidden h-[calc(var(--vh)-10rem)] lg:h-[calc(var(--vh)-12.5rem)]"
   >
     <img
       #banner
-      class="w-full object-cover object-[50%_80%] pb-40 md:pb-60 h-screen absolute top-0 left-0 opacity-90"
+      class="w-full object-cover object-[50%_80%] pb-40 h-(--vh) absolute top-0 left-0 opacity-90"
       src="assets/images/banner.webp"
     />
   </div>
@@ -13,9 +13,7 @@
     class="absolute animate-fade-right animate-once animate-ease-in-out text-white flex items-center md:justify-start justify-center h-full w-full top-40 lg:top-20 left-0"
   >
     <div class="md:pl-10 xl:pl-20">
-      <p
-        class="8xl:text-[5rem] xl:text-[4rem] md:text-[3rem] text-[2rem] font-libre-baskerville italic"
-      >
+      <p class="md:text-[3rem] text-[2rem] font-libre-baskerville italic">
         Vão se casar
       </p>
       <p
@@ -24,12 +22,12 @@
         Sarah & Jônathas
       </p>
       <p
-        class="hidden md:flex text-[7rem] xl:text-[12rem] 8xl:text-[20rem] text-justify leading-none not-italic font-raleway"
+        class="hidden md:flex text-[8rem] 8xl:text-[15rem] text-justify leading-none not-italic font-raleway"
       >
         Sarah &
       </p>
       <p
-        class="hidden md:flex text-[7rem] xl:text-[12rem] 8xl:text-[20rem] leading-none not-italic font-raleway"
+        class="hidden md:flex text-[8rem] 8xl:text-[15rem] leading-none not-italic font-raleway"
       >
         Jônathas
       </p>
