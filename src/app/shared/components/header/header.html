@@ -5,7 +5,10 @@
   <div
     class="flex items-center max-w-400 xl:max-w-720 mx-auto justify-between md:px-4 py-5 w-full text-xl lg:text-2xl uppercase h-30 xl:px-10"
   >
-    <div class="hidden md:flex cursor-pointer w-fit">
+    <div
+      class="hidden md:flex cursor-pointer w-fit"
+      (click)="onScroll('start')"
+    >
       <svg-icon
         class="flex w-28 h-22 px-2 animate-delay-500 group-scrolled:text-black text-white animate-fade-down"
         src="assets/icons/logo.svg"
@@ -17,13 +20,15 @@
     >
       <button
         type="button"
-        class="px-2 md:px-5 py-2 uppercase not-italic font-raleway transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
+        (click)="onScroll('wedding')"
+        class="px-2 md:px-5 py-2 cursor-pointer uppercase not-italic font-raleway transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
       >
         Cerimônia
       </button>
       <button
         type="button"
-        class="px-2 md:px-5 py-2 uppercase not-italic font-raleway transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
+        (click)="onScroll('history')"
+        class="px-2 md:px-5 py-2 cursor-pointer uppercase not-italic font-raleway transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
       >
         <span class="not-italic font-raleway md:hidden">História</span>
         <span class="not-italic font-raleway hidden md:block">
@@ -32,7 +37,8 @@
       </button>
       <button
         type="button"
-        class="px-2 md:px-5 py-2 uppercase not-italic font-raleway transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
+        (click)="onScroll('gift')"
+        class="px-2 md:px-5 py-2 cursor-pointer uppercase not-italic font-raleway transition-all duration-300 rounded-full block animate-delay-700 animate-fade-up active:brightness-125 hover:bg-base-primary-400"
       >
         <span class="not-italic font-raleway md:hidden">Presentes</span>
         <span class="not-italic font-raleway hidden md:block">

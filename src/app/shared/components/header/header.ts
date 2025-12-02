@@ -25,4 +25,16 @@ export class Header implements AfterViewInit {
       )
       .subscribe();
   }
+
+  public onScroll(fragment: string) {
+    const tryScroll = () => {
+      const el = document.getElementById(fragment);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        requestAnimationFrame(tryScroll);
+      }
+    };
+    tryScroll();
+  }
 }
