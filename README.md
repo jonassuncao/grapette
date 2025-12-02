@@ -15,3 +15,5 @@ https://github1s.com/brunofilho1/javascript-dinosaur-game/blob/HEAD/app.js#L1-L6
 https://github.com/MarcosAllysson/dinosaur-game-javascript-html-css
 
 https://www.canva.com/design/DAG5vSbcDTo/irPFWuTzxozic9_ZozawTQ/edit
+
+https://docs.google.com/spreadsheets/d/1uBgBc8i-3xRkeYViJD8EEU3IwaUE3IRZXwp8BJWqHMc/edit?usp=sharing

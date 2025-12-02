@@ -75,16 +75,32 @@ export class HistoryComponent implements OnInit {
   ]);
   public current = signal(null);
   public readonly options: OwlOptions = {
-    margin: 20,
+    margin: 10,
     loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     dots: false,
     nav: false,
-    items: 10,
     lazyLoad: true,
     autoplay: true,
+    responsive: {
+      0: {
+        items: 3,
+      },
+      700: {
+        margin: 20,
+        items: 5,
+      },
+      900: {
+        margin: 20,
+        items: 10,
+      },
+      1100: {
+        margin: 40,
+        items: 7,
+      },
+    },
   };
 
   public ngOnInit() {
@@ -93,8 +109,11 @@ export class HistoryComponent implements OnInit {
 
   public onSelect(index: any) {
     const url = this.imgs()[index];
-    this.loading.set(true);
-    this.current.set(url.replace(/assets\/[^\/]+\//, 'assets/images/'));
+    const preview = url.replace(/assets\/[^\/]+\//, 'assets/images/');
+    if (this.current() !== preview) {
+      this.loading.set(true);
+    }
+    this.current.set(preview);
   }
 
   public onChange(event: SlidesOutputData) {
