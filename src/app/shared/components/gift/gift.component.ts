@@ -1,7 +1,14 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { Dialog } from '@angular/cdk/dialog';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import SHARED_MODULES from '@app/shared';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { Logo } from '../logo/logo';
+import { ModalPriceComponent } from './modal-price.component';
 
 @Component({
   selector: 'app-gift',
@@ -10,6 +17,7 @@ import { Logo } from '../logo/logo';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GiftComponent {
+  private readonly dialog = inject(Dialog);
   public list1 = signal([
     {
       item: 'Conjunto de copos de vidro (6 unid.)',
@@ -536,6 +544,7 @@ export class GiftComponent {
       },
     },
   ]);
+
   public readonly options: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -565,4 +574,8 @@ export class GiftComponent {
       },
     },
   };
+
+  public onOpen(item: any) {
+    this.dialog.open(ModalPriceComponent, { data: item });
+  }
 }

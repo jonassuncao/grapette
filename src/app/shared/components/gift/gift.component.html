@@ -8,125 +8,125 @@
   <div class="flex flex-col gap-30 w-full">
     <owl-carousel-o class="w-full" [options]="options">
       @for (item of list1(); track $index) {
-      <ng-template carouselSlide>
-        <div class="py-5 px-3">
-          <div
-            class="bg-base-500 shadow-md group shadow-black/20 p-4 rounded-2xl text-center flex flex-col gap-5"
-          >
-            <div class="relative rounded-xl overflow-hidden bg-white h-50">
-              <app-logo
-                class="flex absolute rounded-xl p-5 w-full h-full left-0 top-0 justify-center"
-              ></app-logo>
-              <img
-                loading="lazy"
-                class="relative transition-all duration-300 group-hover:scale-150 rounded-xl z-30 w-full shadow h-full object-cover"
-                [src]="item.img"
-              />
-            </div>
-
-            <p class="text-[1.5rem] h-25 not-italic font-raleway">
-              {{ item.item }}
-            </p>
-
-            <button
-              class="flex cursor-pointer gap-5 border group/action justify-center font-medium leading-12 not-italic font-raleway rounded-full p-1"
-              type="button"
+        <ng-template carouselSlide>
+          <div class="py-5 px-3 cursor-pointer" (click)="onOpen(item)">
+            <div
+              class="bg-base-500 shadow-md group shadow-black/20 p-4 rounded-2xl text-center flex flex-col gap-5"
             >
-              <p
-                class="text-2xl transition-all duration-300 not-italic font-raleway group-hover/action:bg-secondary-500 w-full rounded-full px-5 py-2"
-              >
-                R$
-                <span class="not-italic font-raleway font-semibold text-3xl">{{
-                  item.price.decimal | number
-                }}</span
-                >,{{ item.price.cents }}
+              <div class="relative rounded-xl overflow-hidden bg-white h-80">
+                <app-logo
+                  class="flex absolute rounded-xl p-5 w-full h-full left-0 top-0 justify-center"
+                ></app-logo>
+                <img
+                  loading="lazy"
+                  class="relative transition-all duration-300 group-hover:scale-150 rounded-xl z-30 w-full shadow h-full object-cover"
+                  [src]="item.img"
+                />
+              </div>
+
+              <p class="text-[1.5rem] h-25 not-italic font-raleway">
+                {{ item.item }}
               </p>
-            </button>
+
+              <button
+                class="flex cursor-pointer gap-5 border group/action justify-center font-medium leading-12 not-italic font-raleway rounded-full p-1"
+                type="button"
+              >
+                <p
+                  class="text-2xl transition-all duration-300 not-italic font-raleway group-hover/action:bg-secondary-500 w-full rounded-full px-5 py-2"
+                >
+                  R$
+                  <span
+                    class="not-italic font-raleway font-semibold text-3xl"
+                    >{{ item.price.decimal | number }}</span
+                  >,{{ item.price.cents }}
+                </p>
+              </button>
+            </div>
           </div>
-        </div>
-      </ng-template>
+        </ng-template>
       }
     </owl-carousel-o>
     <owl-carousel-o class="w-full" [options]="options">
       @for (item of list2(); track $index) {
-      <ng-template carouselSlide>
-        <div class="py-5 px-3">
-          <div
-            class="bg-base-500 shadow-md group shadow-black/20 p-4 rounded-2xl text-center flex flex-col gap-5"
-          >
-            <div class="relative rounded-xl overflow-hidden bg-white h-50">
-              <app-logo
-                class="flex absolute rounded-xl p-5 w-full h-full left-0 top-0 justify-center"
-              ></app-logo>
-              <img
-                loading="lazy"
-                class="relative transition-all duration-300 group-hover:scale-150 rounded-xl z-30 w-full shadow h-full object-cover"
-                [src]="item.img"
-              />
-            </div>
-
-            <p class="text-[1.5rem] h-25 not-italic font-raleway">
-              {{ item.item }}
-            </p>
-
-            <button
-              class="flex cursor-pointer gap-5 border group/action justify-center font-medium leading-12 not-italic font-raleway rounded-full p-1"
-              type="button"
+        <ng-template carouselSlide>
+          <div class="py-5 px-3 cursor-pointer" (click)="onOpen(item)">
+            <div
+              class="bg-base-500 shadow-md group shadow-black/20 p-4 rounded-2xl text-center flex flex-col gap-5"
             >
-              <p
-                class="text-2xl transition-all duration-300 not-italic font-raleway group-hover/action:bg-secondary-500 w-full rounded-full px-5 py-2"
-              >
-                R$
-                <span class="not-italic font-raleway font-semibold text-3xl">{{
-                  item.price.decimal | number
-                }}</span
-                >,{{ item.price.cents }}
+              <div class="relative rounded-xl overflow-hidden bg-white h-80">
+                <app-logo
+                  class="flex absolute rounded-xl p-5 w-full h-full left-0 top-0 justify-center"
+                ></app-logo>
+                <img
+                  loading="lazy"
+                  class="relative transition-all duration-300 group-hover:scale-150 rounded-xl z-30 w-full shadow h-full object-cover"
+                  [src]="item.img"
+                />
+              </div>
+
+              <p class="text-[1.5rem] h-25 not-italic font-raleway">
+                {{ item.item }}
               </p>
-            </button>
+
+              <button
+                class="flex cursor-pointer gap-5 border group/action justify-center font-medium leading-12 not-italic font-raleway rounded-full p-1"
+                type="button"
+              >
+                <p
+                  class="text-2xl transition-all duration-300 not-italic font-raleway group-hover/action:bg-secondary-500 w-full rounded-full px-5 py-2"
+                >
+                  R$
+                  <span
+                    class="not-italic font-raleway font-semibold text-3xl"
+                    >{{ item.price.decimal | number }}</span
+                  >,{{ item.price.cents }}
+                </p>
+              </button>
+            </div>
           </div>
-        </div>
-      </ng-template>
+        </ng-template>
       }
     </owl-carousel-o>
     <owl-carousel-o class="w-full" [options]="options">
       @for (item of list3(); track $index) {
-      <ng-template carouselSlide>
-        <div class="py-5 px-3">
-          <div
-            class="bg-base-500 shadow-md group shadow-black/20 p-4 rounded-2xl text-center flex flex-col gap-5"
-          >
-            <div class="relative rounded-xl overflow-hidden bg-white h-50">
-              <app-logo
-                class="flex absolute rounded-xl p-5 w-full h-full left-0 top-0 justify-center"
-              ></app-logo>
-              <img
-                loading="lazy"
-                class="relative transition-all duration-300 group-hover:scale-150 rounded-xl z-30 w-full shadow h-full object-cover"
-                [src]="item.img"
-              />
-            </div>
-
-            <p class="text-[1.5rem] h-25 not-italic font-raleway">
-              {{ item.item }}
-            </p>
-
-            <button
-              class="flex cursor-pointer gap-5 border group/action justify-center font-medium leading-12 not-italic font-raleway rounded-full p-1"
-              type="button"
+        <ng-template carouselSlide>
+          <div class="py-5 px-3 cursor-pointer" (click)="onOpen(item)">
+            <div
+              class="bg-base-500 shadow-md group shadow-black/20 p-4 rounded-2xl text-center flex flex-col gap-5"
             >
-              <p
-                class="text-2xl transition-all duration-300 not-italic font-raleway group-hover/action:bg-secondary-500 w-full rounded-full px-5 py-2"
-              >
-                R$
-                <span class="not-italic font-raleway font-semibold text-3xl">{{
-                  item.price.decimal | number
-                }}</span
-                >,{{ item.price.cents }}
+              <div class="relative rounded-xl overflow-hidden bg-white h-80">
+                <app-logo
+                  class="flex absolute rounded-xl p-5 w-full h-full left-0 top-0 justify-center"
+                ></app-logo>
+                <img
+                  loading="lazy"
+                  class="relative transition-all duration-300 group-hover:scale-150 rounded-xl z-30 w-full shadow h-full object-cover"
+                  [src]="item.img"
+                />
+              </div>
+
+              <p class="text-[1.5rem] h-25 not-italic font-raleway">
+                {{ item.item }}
               </p>
-            </button>
+
+              <button
+                class="flex cursor-pointer gap-5 border group/action justify-center font-medium leading-12 not-italic font-raleway rounded-full p-1"
+                type="button"
+              >
+                <p
+                  class="text-2xl transition-all duration-300 not-italic font-raleway group-hover/action:bg-secondary-500 w-full rounded-full px-5 py-2"
+                >
+                  R$
+                  <span
+                    class="not-italic font-raleway font-semibold text-3xl"
+                    >{{ item.price.decimal | number }}</span
+                  >,{{ item.price.cents }}
+                </p>
+              </button>
+            </div>
           </div>
-        </div>
-      </ng-template>
+        </ng-template>
       }
     </owl-carousel-o>
   </div>
