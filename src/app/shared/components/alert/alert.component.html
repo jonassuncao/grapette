@@ -1,0 +1,60 @@
+@if (data.title) {
+  <app-modal-header>
+    <h1 class="text-2xl not-italic font-raleway font-semibold" translate>
+      {{ data.title }}
+    </h1>
+  </app-modal-header>
+}
+<div
+  app-modal-content
+  class="grid min-h-[100px] grid-cols-[auto_1fr] items-center gap-10"
+>
+  @if (isType(type.Warning)) {
+    <svg-icon
+      src="assets/icons/alert-fill.svg"
+      class="self-start w-20 h-20 text-yellow-500"
+    ></svg-icon>
+  }
+  @if (isType(type.Success)) {
+    <svg-icon
+      src="assets/icons/checked-circle.svg"
+      class="self-start w-20 h-20 text-green-600"
+    ></svg-icon>
+  }
+  @if (data.message) {
+    <div class="not-italic font-raleway" translate>
+      {{ data.message }}
+    </div>
+  } @else {
+    <div class="not-italic font-raleway" [innerHTML]="data.innerHtml"></div>
+  }
+</div>
+<div app-modal-footer class="justify-end gap-2">
+  @if (data.confirm) {
+    <button
+      type="button"
+      app-button
+      class="text-red-500 not-italic font-raleway hover:bg-red-200"
+      dialogClose
+    >
+      Não
+    </button>
+    <button
+      type="button"
+      app-button
+      class="text-white not-italic font-raleway bg-blue-500"
+      [dialogClose]="true"
+    >
+      Sim
+    </button>
+  } @else {
+    <button
+      type="button"
+      app-button
+      class="text-white not-italic font-raleway bg-blue-500"
+      [dialogClose]="true"
+    >
+      Ok
+    </button>
+  }
+</div>

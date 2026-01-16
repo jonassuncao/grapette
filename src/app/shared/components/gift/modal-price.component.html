@@ -1,0 +1,130 @@
+<app-modal-header>
+  <div
+    class="flex gap-2 font-semibold xl:text-[2rem] text-[1.5rem] items-center justify-center"
+  >
+    <svg-icon
+      class="flex w-20 h-20 px-2 text-white"
+      src="assets/icons/pix.svg"
+    ></svg-icon>
+    Pagamento por PIX
+  </div>
+</app-modal-header>
+<hr app-divider />
+<div
+  app-modal-content
+  class="gap-10 flex flex-col w-[90vw] h-[60vh] max-h-[65vh] lg:h-300 xl:w-350"
+>
+  <div class="grid lg:grid-cols-2 gap-10">
+    <div class="flex flex-col gap-2 items-center">
+      <img
+        loading="lazy"
+        class="relative max-h-100 xl:max-h-130 object-cover rounded-xl w-full shadow"
+        [src]="data.img"
+      />
+      <p class="text-[1.5rem] not-italic font-raleway">{{ data.item }}</p>
+    </div>
+
+    <div class="flex w-full flex-col gap-5">
+      <div class="flex flex-col md:flex-row justify-center gap-5 md:gap-10">
+        <div>
+          <div class="text-xl not-italic font-raleway font-semibold">Nome</div>
+          <div class="py-1 text-2xl not-italic font-raleway uppercase">
+            Jonathas Assunção Alves
+          </div>
+        </div>
+        <div>
+          <div class="text-xl not-italic font-raleway font-semibold">Valor</div>
+          <p
+            class="text-2xl transition-all duration-300 not-italic font-raleway group-hover/action:bg-secondary-500 w-full rounded-full"
+          >
+            R$
+            <span class="not-italic font-raleway font-semibold text-3xl">{{
+              data.price.decimal | number
+            }}</span
+            >,{{ data.price.cents }}
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <qrcode
+          (click)="onCopy()"
+          class="p-4 shadow-inner cursor-pointer bg-base-500 hover:brightness-95 active:brightness-110 shadow-black/30 shadow-base-gray-200 rounded-3xl"
+          elementType="canvas"
+          errorCorrectionLevel="M"
+          imageSrc="assets/imgs/pix.png"
+          [qrdata]="pix().payload"
+          [imageHeight]="75"
+          [imageWidth]="75"
+          [margin]="0"
+          [width]="250"
+        ></qrcode>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex gap-2 flex-col">
+    <p class="pt-5 text-center font-semibold not-italic font-raleway text-2xl">
+      PIX Copia e Cola
+    </p>
+    <div class="flex flex-col lg:flex-row gap-5">
+      <div
+        class="flex items-center justify-center gap-2 px-10 py-6 truncate shadow-inner cursor-pointer select-none hover:brightness-95 active:brightness-110 bg-base-500 shadow-black/20 shadow-base-gray-200 rounded-3xl"
+        (click)="onCopy()"
+      >
+        <p class="truncate">{{ pix().payload }}</p>
+      </div>
+      <button
+        app-button
+        class="items-center justify-center text-[1.5rem] not-italic p-0! font-raleway"
+        (click)="onCopy()"
+        type="button"
+      >
+        <svg-icon
+          class="flex w-15 h-15 px-2 text-black"
+          src="assets/icons/copy.svg"
+        ></svg-icon>
+        Copiar
+      </button>
+    </div>
+  </div>
+
+  <textarea
+    #message
+    class="w-full min-h-[40vh] md:min-h-80 p-4 bg-base-500 mt-2 border text-2xl border-gray-300 not-italic font-raleway rounded-lg resize-none focus:ring-0 focus:outline-none"
+    placeholder="Escreva sua mensagem aqui..."
+    [formControl]="messageCtrl"
+    [ngClass]="{
+      'border-red-500 placeholder:text-red-500 placeholder:font-semibold':
+        messageCtrl.invalid && messageCtrl.touched,
+    }"
+  ></textarea>
+</div>
+
+<hr app-divider />
+<div app-modal-footer class="flex gap-4">
+  <button
+    app-button
+    [disabled]="load()"
+    type="button"
+    (click)="onSend(message)"
+    class="text-black justify-center items-center gap-2 px-15 brightness-100! bg-secondary-500 text-[1.5rem] not-italic font-raleway"
+  >
+    @if (load()) {
+      <svg-icon
+        class="flex absolute top-1/2 -translate-y-1/2 left-4 w-10 animate-spin text-black h-10 px-2"
+        src="assets/imgs/spin.svg"
+      ></svg-icon>
+    }
+
+    Enviar mensagem
+  </button>
+  <button
+    app-button
+    type="button"
+    dialogClose
+    class="text-red-500 justify-center items-center text-[1.5rem] hover:bg-red-200 not-italic font-raleway"
+  >
+    Fechar
+  </button>
+</div>

@@ -6,6 +6,7 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import SHARED_MODULES from './shared';
+import { RecaptchaService } from '@service/recaptcha.service';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,12 @@ import SHARED_MODULES from './shared';
 })
 export class App {
   private readonly platformId = inject(PLATFORM_ID);
+  private readonly recaptchaService = inject(RecaptchaService);
   private isBrowser = false;
 
   constructor() {
     this.isBrowser = isPlatformBrowser(this.platformId);
+    this.recaptchaService.init();
     this.position();
   }
 

@@ -11,6 +11,8 @@
 @import "./theme/colors.css";
 @import "./theme/breakpoints.css";
 
+@import "./components/dialog.css";
+
 @custom-variant scrolled (&.scrolled);
 @custom-variant group-scrolled (.scrolled &);
 
@@ -37,5 +39,9 @@
   html,
   body {
     @apply font-libre-baskerville italic;
+  }
+
+  .grecaptcha-badge {
+    @apply invisible;
   }
 }
