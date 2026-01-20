@@ -2,10 +2,7 @@
   <div
     class="flex gap-2 font-semibold xl:text-[2rem] text-[1.5rem] items-center justify-center"
   >
-    <svg-icon
-      class="flex w-20 h-20 px-2 text-white"
-      src="assets/icons/pix.svg"
-    ></svg-icon>
+    <svg-icon class="flex w-20 h-20 px-2" src="assets/icons/pix.svg"></svg-icon>
     Pagamento por PIX
   </div>
 </app-modal-header>
@@ -89,6 +86,38 @@
     </div>
   </div>
 
+  <div
+    class="relative text-center before:absolute before:left-0 before:w-full before:h-px before:bg-base-800 before:top-1/2"
+  >
+    <span
+      class="relative text-center font-semibold not-italic font-raleway text-2xl bg-white px-4"
+    >
+      ou
+    </span>
+  </div>
+
+  <div class="flex flex-col justify-center lg:flex-row gap-5">
+    @if (payment()) {
+      <a
+        class="flex gap-5 border font-medium text-2xl w-full lg:w-[250px] leading-12 not-italic hover:underline font-raleway rounded-full px-7 py-3 items-center justify-center"
+        [href]="payment().init_point"
+      >
+        <svg-icon
+          class="block h-10 w-10"
+          src="assets/icons/card.svg"
+        ></svg-icon>
+        Pagar com Cartão
+      </a>
+    } @else {
+      <div
+        class="flex gap-5 border-base-800 border w-full lg:w-[250px] h-[47px] font-medium text-2xl leading-12 not-italic hover:underline font-raleway rounded-full px-7 py-3 items-center cursor-pointer"
+      >
+        <div
+          class="bg-base-800/40 animate-pulse w-full h-full rounded-full"
+        ></div>
+      </div>
+    }
+  </div>
   <textarea
     #message
     class="w-full min-h-[40vh] md:min-h-80 p-4 bg-base-500 mt-2 border text-2xl border-gray-300 not-italic font-raleway rounded-lg resize-none focus:ring-0 focus:outline-none"

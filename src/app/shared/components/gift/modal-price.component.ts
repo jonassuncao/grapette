@@ -1,26 +1,26 @@
 import { Clipboard, ClipboardModule } from '@angular/cdk/clipboard';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
+import { HttpClient } from '@angular/common/http';
 import {
   ChangeDetectionStrategy,
   Component,
-  contentChild,
-  ElementRef,
   inject,
   OnInit,
+  Signal,
   signal,
-  ViewChild,
-  viewChild,
 } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import SHARED_MODULES from '@app/shared';
 import { CopyAndPaste } from '@app/shared/pix';
+import { environment } from '@env/environment';
 import { AlertService } from '@service/alert.service';
+import { PaymentService } from '@service/payment.service';
+import { RecaptchaService } from '@service/recaptcha.service';
 import { QRCodeComponent } from 'angularx-qrcode';
 import { head } from 'lodash';
+import { take } from 'rxjs/operators';
 import { MODAL } from '../modal';
-import { HttpClient } from '@angular/common/http';
-import { RecaptchaService } from '@service/recaptcha.service';
-import { environment } from '@env/environment';
 
 @Component({
   templateUrl: './modal-price.component.html',
@@ -38,11 +38,20 @@ export class ModalPriceComponent implements OnInit {
   protected readonly http = inject(HttpClient);
   protected readonly dialogRef = inject(DialogRef);
   protected readonly recaptchaService = inject(RecaptchaService);
+  protected readonly paymentService = inject(PaymentService);
   protected readonly pix = signal(null);
   protected readonly load = signal(false);
+  protected payment: Signal<any>;
   protected readonly messageCtrl = new FormControl(null, [Validators.required]);
   private clipboard = inject(Clipboard);
   private alertService = inject(AlertService);
+
+  constructor() {
+    const id = head(this.data.img.match(/\d+/));
+    this.payment = toSignal(this.paymentService.paymentTo({ item: id }), {
+      initialValue: null,
+    });
+  }
 
   public ngOnInit() {
     const id = head(this.data.img.match(/\d+/));
@@ -73,11 +82,13 @@ export class ModalPriceComponent implements OnInit {
         const id = head(this.data.img.match(/\d+/));
         this.recaptchaService
           .execute((recaptcha) =>
-            this.http.post(`${environment.api}/api/send`, {
-              item: id,
-              message: this.messageCtrl.value,
-              recaptcha,
-            }),
+            this.http
+              .post(`${environment.api}/api/send`, {
+                item: id,
+                message: this.messageCtrl.value,
+                recaptcha,
+              })
+              .pipe(take(1)),
           )
           .subscribe({
             next: () => {

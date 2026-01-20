@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import SHARED_MODULES from './shared';
 import { RecaptchaService } from '@service/recaptcha.service';
+import { PaymentService } from '@service/payment.service';
 
 @Component({
   selector: 'app-root',
@@ -18,11 +19,13 @@ import { RecaptchaService } from '@service/recaptcha.service';
 export class App {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly recaptchaService = inject(RecaptchaService);
+  private readonly paymentService = inject(PaymentService);
   private isBrowser = false;
 
   constructor() {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.recaptchaService.init();
+    this.paymentService.init();
     this.position();
   }
 
