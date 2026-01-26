@@ -9,12 +9,27 @@
       ></svg-icon>
     </div>
 
-    <a
-      href="https://github.com/jonassuncao"
-      target="_blank"
-      class="hover:underline w-fit items-center text-xl justify-center gap-5 flex"
-    >
-      2025 Jônathas Assunção - Todos os direitos reservados.
-    </a>
+    <div class="flex flex-col gap-2 items-center">
+      <a
+        href="https://api.whatsapp.com/send/?phone=5515991693292"
+        target="_blank"
+        class="hover:underline w-fit items-center text-xl justify-center gap- flex"
+      >
+        <svg-icon
+          class="flex w-10 h-10 px-2"
+          src="assets/icons/whatsapp.svg"
+        ></svg-icon>
+        (15) 9 9169-3292
+      </a>
+      <a
+        href="https://github.com/jonassuncao"
+        target="_blank"
+        class="hover:underline flex-col w-fit items-center lg:flex-row text-xl justify-center lg:gap-2 flex"
+      >
+        <span>{{year | date : 'YYYY'}} Jônathas Assunção</span>
+        <span class="hidden lg:inline">-</span>
+        <span> Todos os direitos reservados. </span>
+      </a>
+    </div>
   </div>
 </div>

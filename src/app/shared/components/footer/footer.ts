@@ -7,4 +7,6 @@ import SHARED_MODULES from '@app/shared';
   templateUrl: './footer.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Footer {}
+export class Footer {
+  public readonly year = new Date();
+}
