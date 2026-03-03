@@ -22,6 +22,7 @@ export class GiftComponent {
     {
       item: 'Conjunto de copos de vidro (6 unid.)',
       img: 'assets/gifts/gift1.webp',
+      disabled: true,
       price: {
         decimal: 57,
         cents: '90',
@@ -30,6 +31,7 @@ export class GiftComponent {
     {
       item: 'Porta-retrato quadrado',
       img: 'assets/gifts/gift2.webp',
+      disabled: true,
       price: {
         decimal: 59,
         cents: '99',
@@ -46,6 +48,7 @@ export class GiftComponent {
     {
       item: 'Assadeira Funda de Alumínio 34 cm',
       img: 'assets/gifts/gift4.webp',
+      disabled: true,
       price: {
         decimal: 78,
         cents: '57',
@@ -70,6 +73,7 @@ export class GiftComponent {
     {
       item: 'Luva Térmica',
       img: 'assets/gifts/gift7.webp',
+      disabled: true,
       price: {
         decimal: 89,
         cents: '90',
@@ -78,6 +82,7 @@ export class GiftComponent {
     {
       item: 'Ferro de Passar',
       img: 'assets/gifts/gift8.webp',
+      disabled: true,
       price: {
         decimal: 89,
         cents: '90',
@@ -102,6 +107,7 @@ export class GiftComponent {
     {
       item: 'Kit 2 Assadeiras Marinex',
       img: 'assets/gifts/gift11.webp',
+      disabled: true,
       price: {
         decimal: 109,
         cents: '20',
@@ -110,6 +116,7 @@ export class GiftComponent {
     {
       item: 'Kit Potes de Vidro',
       img: 'assets/gifts/gift12.webp',
+      disabled: true,
       price: {
         decimal: 110,
         cents: '00',
@@ -126,6 +133,7 @@ export class GiftComponent {
     {
       item: 'Sanduicheira e Grill',
       img: 'assets/gifts/gift14.webp',
+      disabled: true,
       price: {
         decimal: 119,
         cents: '44',
@@ -158,6 +166,7 @@ export class GiftComponent {
     {
       item: 'Escada Banqueta Alumínio',
       img: 'assets/gifts/gift18.webp',
+      disabled: true,
       price: {
         decimal: 139,
         cents: '90',
@@ -166,6 +175,7 @@ export class GiftComponent {
     {
       item: 'Faqueiro de Aço Inox 30 Peças',
       img: 'assets/gifts/gift19.webp',
+      disabled: true,
       price: {
         decimal: 140,
         cents: '08',
@@ -174,6 +184,7 @@ export class GiftComponent {
     {
       item: 'Jarra de vidro',
       img: 'assets/gifts/gift20.webp',
+      disabled: true,
       price: {
         decimal: 149,
         cents: '99',
@@ -182,6 +193,7 @@ export class GiftComponent {
     {
       item: 'Vaso de cerâmica',
       img: 'assets/gifts/gift21.webp',
+      disabled: true,
       price: {
         decimal: 149,
         cents: '99',
@@ -198,6 +210,7 @@ export class GiftComponent {
     {
       item: 'Jogo de Assadeiras de Alumínio',
       img: 'assets/gifts/gift23.webp',
+      disabled: true,
       price: {
         decimal: 166,
         cents: '00',
@@ -240,6 +253,7 @@ export class GiftComponent {
     {
       item: 'Kit de Facas 6 Peças',
       img: 'assets/gifts/gift28.webp',
+      disabled: true,
       price: {
         decimal: 200,
         cents: '00',
@@ -256,6 +270,7 @@ export class GiftComponent {
     {
       item: 'Aspirador de Pó e Água Portátil',
       img: 'assets/gifts/gift30.webp',
+      disabled: true,
       price: {
         decimal: 229,
         cents: '00',
@@ -288,6 +303,7 @@ export class GiftComponent {
     {
       item: 'Jogo de Talheres 45 Peças',
       img: 'assets/gifts/gift34.webp',
+      disabled: true,
       price: {
         decimal: 269,
         cents: '41',
@@ -320,6 +336,7 @@ export class GiftComponent {
     {
       item: 'Travessa de Bolos e Tortas',
       img: 'assets/gifts/gift38.webp',
+      disabled: true,
       price: {
         decimal: 299,
         cents: '90',
@@ -328,6 +345,7 @@ export class GiftComponent {
     {
       item: 'Jogo de Lençol 4 Peças QUEEN',
       img: 'assets/gifts/gift39.webp',
+      disabled: true,
       price: {
         decimal: 379,
         cents: '99',
@@ -368,6 +386,7 @@ export class GiftComponent {
     {
       item: 'Aparelho de Jantar 20 Peças',
       img: 'assets/gifts/gift44.webp',
+      disabled: true,
       price: {
         decimal: 449,
         cents: '90',
@@ -490,6 +509,7 @@ export class GiftComponent {
     {
       item: 'Samsung Smart TV 43" QLED 4K',
       img: 'assets/gifts/gift59.webp',
+      disabled: true,
       price: {
         decimal: 2899,
         cents: '00',
@@ -538,6 +558,7 @@ export class GiftComponent {
     {
       item: 'Refrigerador Frost Free',
       img: 'assets/gifts/gift65.webp',
+      disabled: true,
       price: {
         decimal: 5099,
         cents: '00',
@@ -576,6 +597,8 @@ export class GiftComponent {
   };
 
   public onOpen(item: any) {
-    this.dialog.open(ModalPriceComponent, { data: item });
+    if (!item.disabled) {
+      this.dialog.open(ModalPriceComponent, { data: item });
+    }
   }
 }
