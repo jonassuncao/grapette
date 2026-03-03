@@ -9,9 +9,12 @@
     <owl-carousel-o class="w-full" [options]="options">
       @for (item of list1(); track $index) {
         <ng-template carouselSlide>
-          <div class="py-5 px-3 cursor-pointer">
+          <div class="py-5 px-3 relative cursor-pointer">
             <div
               class="bg-base-500 shadow-md group shadow-black/20 p-4 rounded-2xl text-center flex flex-col gap-5"
+              [ngClass]="{
+                'pointer-events-none grayscale-75': item.disabled,
+              }"
             >
               <div
                 class="relative rounded-xl overflow-hidden bg-white h-80"
@@ -24,26 +27,46 @@
                   loading="lazy"
                   class="relative transition-all duration-300 group-hover:scale-150 rounded-xl z-30 w-full shadow h-full object-cover"
                   [src]="item.img"
+                  [ngClass]="{ 'blur-[2px]': item.disabled }"
                 />
+                @if (item.disabled) {
+                  <div
+                    class="absolute z-40 top-0 w-full left-0 h-full flex items-center justify-center"
+                  >
+                    <span
+                      class="bg-white text-2xl font-medium not-italic font-raleway rounded-full px-5 py-2"
+                    >
+                      Já Presenteado
+                    </span>
+                  </div>
+                }
               </div>
 
-              <p class="text-[1.5rem] h-25 not-italic font-raleway">
+              <p
+                class="text-[1.5rem] h-25 not-italic font-raleway"
+                [ngClass]="{ 'blur-[1px]': item.disabled }"
+              >
                 {{ item.item }}
               </p>
 
               <button
                 class="flex cursor-pointer gap-5 border group/action justify-center font-medium leading-12 not-italic font-raleway rounded-full p-1"
+                [ngClass]="{ 'blur-[1px]': item.disabled }"
                 type="button"
                 (click)="onOpen(item)"
               >
                 <p
                   class="text-2xl transition-all duration-300 not-italic font-raleway group-hover/action:bg-secondary-500 w-full rounded-full px-5 py-2"
                 >
-                  R$
-                  <span
-                    class="not-italic font-raleway font-semibold text-3xl"
-                    >{{ item.price.decimal | number }}</span
-                  >,{{ item.price.cents }}
+                  @if (item.disabled) {
+                    Indisponível
+                  } @else {
+                    R$
+                    <span
+                      class="not-italic font-raleway font-semibold text-3xl"
+                      >{{ item.price.decimal | number }}</span
+                    >,{{ item.price.cents }}
+                  }
                 </p>
               </button>
             </div>
@@ -54,13 +77,16 @@
     <owl-carousel-o class="w-full" [options]="options">
       @for (item of list2(); track $index) {
         <ng-template carouselSlide>
-          <div class="py-5 px-3 cursor-pointer">
+          <div class="py-5 px-3 relative cursor-pointer">
             <div
               class="bg-base-500 shadow-md group shadow-black/20 p-4 rounded-2xl text-center flex flex-col gap-5"
+              [ngClass]="{
+                'pointer-events-none grayscale-75': item.disabled,
+              }"
             >
               <div
-                (click)="onOpen(item)"
                 class="relative rounded-xl overflow-hidden bg-white h-80"
+                (click)="onOpen(item)"
               >
                 <app-logo
                   class="flex absolute rounded-xl p-5 w-full h-full left-0 top-0 justify-center"
@@ -69,26 +95,46 @@
                   loading="lazy"
                   class="relative transition-all duration-300 group-hover:scale-150 rounded-xl z-30 w-full shadow h-full object-cover"
                   [src]="item.img"
+                  [ngClass]="{ 'blur-[2px]': item.disabled }"
                 />
+                @if (item.disabled) {
+                  <div
+                    class="absolute z-40 top-0 w-full left-0 h-full flex items-center justify-center"
+                  >
+                    <span
+                      class="bg-white text-2xl font-medium not-italic font-raleway rounded-full px-5 py-2"
+                    >
+                      Já Presenteado
+                    </span>
+                  </div>
+                }
               </div>
 
-              <p class="text-[1.5rem] h-25 not-italic font-raleway">
+              <p
+                class="text-[1.5rem] h-25 not-italic font-raleway"
+                [ngClass]="{ 'blur-[1px]': item.disabled }"
+              >
                 {{ item.item }}
               </p>
 
               <button
-                (click)="onOpen(item)"
                 class="flex cursor-pointer gap-5 border group/action justify-center font-medium leading-12 not-italic font-raleway rounded-full p-1"
+                [ngClass]="{ 'blur-[1px]': item.disabled }"
                 type="button"
+                (click)="onOpen(item)"
               >
                 <p
                   class="text-2xl transition-all duration-300 not-italic font-raleway group-hover/action:bg-secondary-500 w-full rounded-full px-5 py-2"
                 >
-                  R$
-                  <span
-                    class="not-italic font-raleway font-semibold text-3xl"
-                    >{{ item.price.decimal | number }}</span
-                  >,{{ item.price.cents }}
+                  @if (item.disabled) {
+                    Indisponível
+                  } @else {
+                    R$
+                    <span
+                      class="not-italic font-raleway font-semibold text-3xl"
+                      >{{ item.price.decimal | number }}</span
+                    >,{{ item.price.cents }}
+                  }
                 </p>
               </button>
             </div>
@@ -99,13 +145,16 @@
     <owl-carousel-o class="w-full" [options]="options">
       @for (item of list3(); track $index) {
         <ng-template carouselSlide>
-          <div class="py-5 px-3 cursor-pointer">
+          <div class="py-5 px-3 relative cursor-pointer">
             <div
               class="bg-base-500 shadow-md group shadow-black/20 p-4 rounded-2xl text-center flex flex-col gap-5"
+              [ngClass]="{
+                'pointer-events-none grayscale-75': item.disabled,
+              }"
             >
               <div
-                (click)="onOpen(item)"
                 class="relative rounded-xl overflow-hidden bg-white h-80"
+                (click)="onOpen(item)"
               >
                 <app-logo
                   class="flex absolute rounded-xl p-5 w-full h-full left-0 top-0 justify-center"
@@ -114,26 +163,46 @@
                   loading="lazy"
                   class="relative transition-all duration-300 group-hover:scale-150 rounded-xl z-30 w-full shadow h-full object-cover"
                   [src]="item.img"
+                  [ngClass]="{ 'blur-[2px]': item.disabled }"
                 />
+                @if (item.disabled) {
+                  <div
+                    class="absolute z-40 top-0 w-full left-0 h-full flex items-center justify-center"
+                  >
+                    <span
+                      class="bg-white text-2xl font-medium not-italic font-raleway rounded-full px-5 py-2"
+                    >
+                      Já Presenteado
+                    </span>
+                  </div>
+                }
               </div>
 
-              <p class="text-[1.5rem] h-25 not-italic font-raleway">
+              <p
+                class="text-[1.5rem] h-25 not-italic font-raleway"
+                [ngClass]="{ 'blur-[1px]': item.disabled }"
+              >
                 {{ item.item }}
               </p>
 
               <button
-                (click)="onOpen(item)"
                 class="flex cursor-pointer gap-5 border group/action justify-center font-medium leading-12 not-italic font-raleway rounded-full p-1"
+                [ngClass]="{ 'blur-[1px]': item.disabled }"
                 type="button"
+                (click)="onOpen(item)"
               >
                 <p
                   class="text-2xl transition-all duration-300 not-italic font-raleway group-hover/action:bg-secondary-500 w-full rounded-full px-5 py-2"
                 >
-                  R$
-                  <span
-                    class="not-italic font-raleway font-semibold text-3xl"
-                    >{{ item.price.decimal | number }}</span
-                  >,{{ item.price.cents }}
+                  @if (item.disabled) {
+                    Indisponível
+                  } @else {
+                    R$
+                    <span
+                      class="not-italic font-raleway font-semibold text-3xl"
+                      >{{ item.price.decimal | number }}</span
+                    >,{{ item.price.cents }}
+                  }
                 </p>
               </button>
             </div>

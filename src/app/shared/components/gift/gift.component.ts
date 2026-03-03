@@ -78,6 +78,7 @@ export class GiftComponent {
     {
       item: 'Ferro de Passar',
       img: 'assets/gifts/gift8.webp',
+      disabled: true,
       price: {
         decimal: 89,
         cents: '90',
@@ -126,6 +127,7 @@ export class GiftComponent {
     {
       item: 'Sanduicheira e Grill',
       img: 'assets/gifts/gift14.webp',
+      disabled: true,
       price: {
         decimal: 119,
         cents: '44',
@@ -166,6 +168,7 @@ export class GiftComponent {
     {
       item: 'Faqueiro de Aço Inox 30 Peças',
       img: 'assets/gifts/gift19.webp',
+      disabled: true,
       price: {
         decimal: 140,
         cents: '08',
@@ -174,6 +177,7 @@ export class GiftComponent {
     {
       item: 'Jarra de vidro',
       img: 'assets/gifts/gift20.webp',
+      disabled: true,
       price: {
         decimal: 149,
         cents: '99',
@@ -256,6 +260,7 @@ export class GiftComponent {
     {
       item: 'Aspirador de Pó e Água Portátil',
       img: 'assets/gifts/gift30.webp',
+      disabled: true,
       price: {
         decimal: 229,
         cents: '00',
@@ -288,6 +293,7 @@ export class GiftComponent {
     {
       item: 'Jogo de Talheres 45 Peças',
       img: 'assets/gifts/gift34.webp',
+      disabled: true,
       price: {
         decimal: 269,
         cents: '41',
@@ -328,6 +334,7 @@ export class GiftComponent {
     {
       item: 'Jogo de Lençol 4 Peças QUEEN',
       img: 'assets/gifts/gift39.webp',
+      disabled: true,
       price: {
         decimal: 379,
         cents: '99',
@@ -490,6 +497,7 @@ export class GiftComponent {
     {
       item: 'Samsung Smart TV 43" QLED 4K',
       img: 'assets/gifts/gift59.webp',
+      disabled: true,
       price: {
         decimal: 2899,
         cents: '00',
@@ -522,6 +530,7 @@ export class GiftComponent {
     {
       item: 'Mesa de Jantar Redonda',
       img: 'assets/gifts/gift63.webp',
+      disabled: true,
       price: {
         decimal: 3299,
         cents: '00',
@@ -538,6 +547,7 @@ export class GiftComponent {
     {
       item: 'Refrigerador Frost Free',
       img: 'assets/gifts/gift65.webp',
+      disabled: true,
       price: {
         decimal: 5099,
         cents: '00',
@@ -576,6 +586,8 @@ export class GiftComponent {
   };
 
   public onOpen(item: any) {
-    this.dialog.open(ModalPriceComponent, { data: item });
+    if (!item.disabled) {
+      this.dialog.open(ModalPriceComponent, { data: item });
+    }
   }
 }
